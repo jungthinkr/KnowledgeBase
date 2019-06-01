@@ -14,7 +14,7 @@ public class MinHeap extends Heap {
             heapify(leftChild(pos));
         }
 
-        if (heap[pos] > heap[rightChild(pos)] && heap[leftChild(pos)] > heap[rightChild(pos)]) {
+        if (heap[pos] > heap[rightChild(pos)] && heap[leftChild(pos)] >= heap[rightChild(pos)]) {
             swap(pos, rightChild(pos));
             heapify(rightChild(pos));
         }
@@ -36,7 +36,4 @@ public class MinHeap extends Heap {
         return polled;
     }
 
-    public boolean isEmpty() {
-        return k == 0;
-    }
 }

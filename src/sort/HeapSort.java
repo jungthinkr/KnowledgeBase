@@ -1,6 +1,5 @@
 package sort;
 
-import structures.heap.MaxHeap;
 import structures.heap.MinHeap;
 
 public class HeapSort {
@@ -11,11 +10,5 @@ public class HeapSort {
         while (!minHeap.isEmpty()) {
             arr[k++] = minHeap.poll();
         }
-//        MaxHeap maxHeap = new MaxHeap(arr.length);
-//        for (Integer num : arr) maxHeap.add(num);
-//        int k = 0;
-//        while (!maxHeap.isEmpty()) {
-//            arr[k++] = maxHeap.poll();
-//        }
     }
 }

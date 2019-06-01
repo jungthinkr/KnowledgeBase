@@ -15,21 +15,37 @@ class Heap {
         return pos / 2;
     }
 
+    /**
+     * pos of left child
+     */
     protected int leftChild(int pos) {
         return 2 * pos;
     }
 
+    /**
+     * pos of right child
+     */
     protected int rightChild(int pos) {
         return 2 * pos + 1;
     }
 
+    /**
+     * determine if element has no children
+     */
     protected boolean isLeaf(int pos) {
-        return pos >= k / 2 && pos <= k;
+        return pos > k / 2 && pos <= k;
     }
 
+    /**
+     * swap heap
+     */
     protected void swap(int i, int j) {
         int temp = heap[i];
         heap[i] = heap[j];
         heap[j] = temp;
+    }
+
+    public boolean isEmpty() {
+        return k == 0;
     }
 }

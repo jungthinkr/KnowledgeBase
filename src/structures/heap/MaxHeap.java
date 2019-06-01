@@ -8,14 +8,14 @@ public class MaxHeap extends Heap {
 
     private void heapify(int pos) {
         if (isLeaf(pos)) return;
-        if (heap[pos] < heap[leftChild(pos)] || heap[pos] < heap[rightChild(pos)]) {
-            if (heap[leftChild(pos)] > heap[rightChild(pos)]) {
-                swap(pos, leftChild(pos));
-                heapify(leftChild(pos));
-            } else {
-                swap(pos, rightChild(pos));
-                heapify(rightChild(pos));
-            }
+        if (heap[pos] < heap[leftChild(pos)] && heap[leftChild(pos)] > heap[rightChild(pos)]) {
+            swap(pos, leftChild(pos));
+            heapify(leftChild(pos));
+        }
+
+        if (heap[pos] < heap[rightChild(pos)] && heap[rightChild(pos)] >= heap[leftChild(pos)]) {
+            swap(pos, rightChild(pos));
+            heapify(rightChild(pos));
         }
     }
 
