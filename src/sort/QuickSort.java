@@ -8,8 +8,8 @@ public class QuickSort {
     private static void sort(int[] arr, int start, int end) {
         if (start >= end) return;
         int partition = arr[(start+end)/2];
-        System.out.printf("start: %s end: %s\n", start, end);
         int index = partition(arr, start, end, partition);
+
         sort(arr, start, index-1);
         sort(arr, index, end);
     }
