@@ -1,7 +1,7 @@
 package structures;
 
 /**
- * Basic class for building Tree data structure
+ * Basic class for building Tree input structure
  */
 
 public class TreeNode {

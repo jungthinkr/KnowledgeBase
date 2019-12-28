@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.Arrays;
+
 public class QuickSort {
     public static void sort(int[] arr) {
        sort(arr, 0, arr.length-1);
@@ -7,23 +9,22 @@ public class QuickSort {
 
     private static void sort(int[] arr, int start, int end) {
         if (start >= end) return;
-        int partition = arr[(start+end)/2];
-        int index = partition(arr, start, end, partition);
+
+        int index = partition(arr, start, end);
+        System.out.println(Arrays.toString(arr));
 
         sort(arr, start, index-1);
-        sort(arr, index, end);
+        sort(arr, index+1, end);
     }
 
-    private static int partition(int[] arr, int start, int end, int partition) {
-        while (start <= end) {
-            while (arr[start] < partition) start++;
-            while (arr[end] > partition) end--;
-            if (start <= end) {
-                swap(arr, start, end);
-                start++;
-                end--;
+    public static int partition(int[] arr, int start, int end) {
+        int pivot = arr[end];
+        for (int j = start; j < end; j++) {
+            if (arr[j] <= pivot) {
+                swap(arr, start++, j);
             }
         }
+        swap(arr, start, end);
         return start;
     }
 
