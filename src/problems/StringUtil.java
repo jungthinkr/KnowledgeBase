@@ -1,4 +1,4 @@
-package algorithms;
+package problems;
 
 import structures.Stack;
 
